@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+    postgres:
+        image: bdm08/pg_xal
+        restart: always
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+        ports:
+          - '5432:5432'
+        volumes:
+          - ./postgres/dics_xal_db_dump.sql:/docker-entrypoint-initdb.d/dics_xal_db_dump.sql
