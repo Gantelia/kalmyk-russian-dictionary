@@ -2,6 +2,7 @@ version: '3.9'
 services:
     postgres:
         image: bdm08/pg_xal
+        container_name: dic_xal_db
         restart: always
         environment:
           - POSTGRES_USER=postgres
@@ -10,9 +11,21 @@ services:
           - '5432:5432'
         volumes:
           - ./postgres/dics_xal_db_dump.sql:/docker-entrypoint-initdb.d/dics_xal_db_dump.sql
+        networks:
+          new:
+            aliases:
+              - database
 
     backend:
         build: './backend'
+        container_name: dic_xal_backend
         restart: always
         ports:
           - '80:80'
+        networks:
+          new:
+            aliases:
+              - backend
+
+    networks:
+        new:
