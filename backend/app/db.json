@@ -1,0 +1,11 @@
+{
+  "db_cred":
+    {
+      "user": "postgres",
+      "password": "postgres",
+      "host": "dics_xal_postgres_1",
+      "port": 5432,
+      "database": "dics_xal_db"
+    }
+}
+
