@@ -3,7 +3,7 @@
     {
       "user": "postgres",
       "password": "postgres",
-      "host": "database",
+      "host": "dic_xal_db",
       "port": 5432,
       "database": "dics_xal_db"
     }

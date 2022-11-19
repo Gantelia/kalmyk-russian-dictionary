@@ -11,6 +11,8 @@ services:
           - '5432:5432'
         volumes:
           - ./postgres/dics_xal_db_dump.sql:/docker-entrypoint-initdb.d/dics_xal_db_dump.sql
+        networks:
+          - postgres
 
     backend:
         build: './backend'
@@ -18,7 +20,12 @@ services:
         restart: always
         ports:
           - '80:80'
-        links:
-          - "db:database"
+        networks:
+          - postgres
+
+    networks:
+      postgres:
+        driver: bridge
+
 
 
