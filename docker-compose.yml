@@ -1,7 +1,8 @@
 version: '3.9'
 services:
-    postgres:
+    db:
         image: bdm08/pg_xal
+        container_name: dic_xal_db
         restart: always
         environment:
           - POSTGRES_USER=postgres
@@ -13,6 +14,7 @@ services:
 
     backend:
         build: './backend'
+        container_name: dic_xal_backend
         restart: always
         ports:
           - '80:80'
