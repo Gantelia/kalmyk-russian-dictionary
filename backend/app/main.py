@@ -17,7 +17,7 @@ async def read_dictionaries(lang: Union[str, None] = None):
     return {"request": lang, "response": get_dics(lang)}
 
 
-@app.get("/data/{lang}")
+@app.get("/data/")
 async def read_data(lang: Union[str, None] = None, word_items: Union[str, None] = None):
     return {"request": [lang, word_items], "response": get_data(lang, word_items)}
 
