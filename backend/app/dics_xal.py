@@ -30,7 +30,7 @@ class DictionariesXal:
         try:
             self.cursor.execute(query, (language,))
 
-        except Exception as err:
+        except psycopg2.Error as err:
             print(err)
 
         else:
