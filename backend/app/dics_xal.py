@@ -26,18 +26,45 @@ class DictionariesXal:
 
     def get_dictionaries(self, query, language):
         """ запрос списка словарей по языку """
-        self.cursor.execute(query, (language,))
-        result = self.cursor.fetchall()
-        return result
+        result = None
+        try:
+            self.cursor.execute(query, (language,))
+
+        except Exception as err:
+            print(err)
+
+        else:
+            result = self.cursor.fetchall()
+
+        finally:
+            return result
 
     def get_word(self, query, word, dic):
         """ запрос одного слова """
-        self.cursor.execute(query, (word, dic))
-        result = self.cursor.fetchone()
-        return result
+        result = None
+        try:
+            self.cursor.execute(query, (word, dic))
+
+        except Exception as err:
+            print(err)
+
+        else:
+            result = self.cursor.fetchone()
+
+        finally:
+            return result
 
     def get_item(self, query, word, dic):
         """ запрос похожих слов или примеров  """
-        self.cursor.execute(query, (word, dic))
-        result = self.cursor.fetchall()
-        return result
+        result = None
+        try:
+            self.cursor.execute(query, (word, dic))
+
+        except Exception as err:
+            print(err)
+
+        else:
+            result = self.cursor.fetchall()
+
+        finally:
+            return result

@@ -1,7 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
 from db import DATABASE_STRING, query_dic, query_word, query_stem, query_examples
-import json
 from dics_xal import DictionariesXal
 
 app = FastAPI()
@@ -14,12 +13,12 @@ def read_root():
 
 @app.get("/dictionaries/{lang}")
 async def read_dictionaries(lang: Union[str, None] = None):
-    return {"request": lang, "response": get_dics(lang)}
+    return {"response": get_dics(lang)}
 
 
 @app.get("/data/")
 async def read_data(lang: Union[str, None] = None, word_items: Union[str, None] = None):
-    return {"request": [lang, word_items], "response": get_data(lang, word_items)}
+    return {"response": get_data(lang, word_items)}
 
 
 def get_dics(lang):
@@ -72,7 +71,5 @@ def get_data(lang, word_items):
         d['results']['stems'] = stems
         d['results']['examples'] = examples
         dictionaries.append(d)
-    json_object = json.dumps(dictionaries, ensure_ascii=False, indent=4)
-    print(json_object)
-    return json_object
+    return dictionaries
 
