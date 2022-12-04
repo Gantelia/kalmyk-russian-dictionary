@@ -5,3 +5,6 @@
 /.idea/vcs.xml
 /.idea/workspace.xml
 /test/
+/backend/app/test.py
+/backend/app/test2.py
+/backend/app/test_etc.py
