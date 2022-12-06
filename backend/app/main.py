@@ -1,9 +1,20 @@
 from typing import Union
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from db import DATABASE_STRING, query_dic, query_word, query_stem, query_examples
 from dics_xal import DictionariesXal
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
@@ -33,7 +44,9 @@ def get_data(lang, word_items):
     psyco.connect(dsn=DATABASE_STRING)
     dictionaries = list()
     dic_list = psyco.get_dictionaries(query=query_dic, language=lang)
-    words = word_items.split(',')
+    words = None
+    if word_items:
+        words = word_items.split(',')
     if dic_list:
         for d in dic_list:
             d['results'] = dict()

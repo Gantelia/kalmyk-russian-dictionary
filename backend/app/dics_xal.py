@@ -68,3 +68,7 @@ class DictionariesXal:
 
         finally:
             return result
+
+    def close_conn(self):
+        self.cursor.close()
+        self.connection.close()
