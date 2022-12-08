@@ -1,0 +1,25 @@
+@import '../../sass/variables.scss';
+
+.not-found__main {
+  padding: 50px 30px;
+}
+
+.not-found__title,
+.not-found__text {
+  text-align: center;
+}
+
+.not-found__text {
+  font-size: 16px;
+  line-height: 23px;
+
+  @media (min-width: $mobile-width) {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}

@@ -1,0 +1,61 @@
+@import '../../sass/variables.scss';
+
+.scroll-button {
+  position: fixed;
+  bottom: 7%;
+  right: 7%;
+  width: 30px;
+  height: 30px;
+  fill: #3e74b4;
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  animation-name: materialize;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  z-index: 5;
+
+  @media (min-width: $mobile-width) {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 55px;
+    height: 55px;
+  }
+
+  @media screen and (min-width: $desktop-width) {
+    right: calc(((100% - $desktop-width) / 2) + $desktop-width * 0.1);
+  }
+
+  &:hover {
+    fill: $basic-color;
+  }
+
+  &:active {
+    fill: $basic-dark;
+  }
+}
+
+.scroll-button__image {
+  width: 108%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes materialize {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}

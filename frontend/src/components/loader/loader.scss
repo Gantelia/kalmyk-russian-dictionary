@@ -1,0 +1,41 @@
+@import '../../sass/variables.scss';
+
+.loader {
+  position: absolute;
+  width: 30%;
+  height: 5px;
+  left: 50%;
+  bottom: 13px;
+  transform: translateX(-50%);
+  max-width: 96px;
+  background-color: #ffffff;
+  border-radius: 3px;
+
+  @media (min-width: $mobile-width) {
+    max-width: 144px;
+    bottom: 18px;
+  }
+
+  @media (min-width: $tablet-width) {
+    max-width: 192px;
+    bottom: 50px;
+  }
+}
+
+.loader::before {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  background-color: $basic-dark;
+  content: '';
+  border-radius: inherit;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  50% {
+    transform: translateX(405%);
+  }
+}

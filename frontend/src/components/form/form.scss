@@ -1,0 +1,261 @@
+@import '../../sass/variables.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  padding-bottom: 32px;
+  position: relative;
+
+  @media (min-width: $mobile-width) {
+    padding-bottom: 44px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 100px;
+  }
+}
+
+.form__lang {
+  min-width: 156px;
+  width: 156px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 16px;
+  border: none;
+  padding: 0;
+
+  @media (min-width: $mobile-width) {
+    width: 223px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 288px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 34px;
+  }
+}
+
+.form__lang-container {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (min-width: $mobile-width) {
+    width: 29px;
+    height: 29px;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.lang-toggle {
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: transparent;
+  padding: 0;
+
+  @media (min-width: $mobile-width) {
+    width: 29px;
+    height: 29px;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &:active {
+    animation-name: rotate;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.lang-toggle__icon {
+  width: 100%;
+  height: auto;
+  fill: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lang-toggle:hover .lang-toggle__icon {
+  fill: $basic-dark;
+}
+
+.lang-toggle:active .lang-toggle__icon {
+  fill: #034797;
+}
+
+.form__wrapper {
+  min-width: 228px;
+  min-height: 58px;
+
+  @media (min-width: $mobile-width) {
+    min-width: 306px;
+    min-height: 80px;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-width: 450px;
+    min-height: 98px;
+  }
+}
+
+.form__field {
+  margin: 0;
+}
+
+.form__input {
+  width: 226px;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  display: block;
+  margin: 0 auto 4px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #c9c9c9;
+  transition-property: border-bottom, box-shadow;
+  transition-duration: 0.3s;
+  padding: 0;
+
+  @media (min-width: $mobile-width) {
+    font-size: 20px;
+    line-height: 26px;
+    width: 300px;
+    margin-bottom: 8px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 26px;
+    line-height: 34px;
+    width: 440px;
+    margin-bottom: 12px;
+  }
+
+  &:hover {
+    border-bottom: 1px solid #ffffff;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1px 0 0 #ffffff;
+  }
+}
+
+.form__input::placeholder {
+  color: #c9c9c9;
+  font-size: 16px;
+  line-height: 21px;
+  transition: color 0.3s ease;
+
+  @media (min-width: $mobile-width) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+.form__input:hover::placeholder {
+  color: #ffffff;
+}
+
+.form__input:focus::placeholder {
+  color: #ffffff;
+}
+
+.form__error {
+  color: $error-color;
+  text-align: center;
+  font-size: 10px;
+  line-height: 13px;
+  margin: 0;
+  margin-bottom: 2px;
+
+  @media (min-width: $mobile-width) {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 4px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.button {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: transparent;
+  text-align: center;
+}
+
+.form__submit {
+  font-size: 14px;
+  line-height: 18px;
+  padding: 11px 22px;
+  margin: 0 auto;
+  background-color: $basic-dark;
+  border: none;
+  border-radius: 8px;
+  font-family: 'PT Sans Caption', sans-serif;
+
+  @media (min-width: $mobile-width) {
+    font-size: 18px;
+    line-height: 23px;
+    border-radius: 12px;
+    padding: 17px 42px 20px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 31px;
+    border-radius: 16px;
+    padding: 22px 56px 27px;
+  }
+
+  &:hover {
+    background-color: #0056ba;
+  }
+
+  &:active {
+    background-color: #034797;
+  }
+
+  &:disabled {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #6085b0;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(180deg);
+  }
+}
