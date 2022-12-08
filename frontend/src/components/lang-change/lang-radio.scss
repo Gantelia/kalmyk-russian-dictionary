@@ -1,0 +1,36 @@
+@import '../../sass/variables.scss';
+
+.lang-change_wrapper {
+  margin: 0;
+}
+
+.radio-label {
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: lowercase;
+  border: none;
+  max-width: 42%;
+  word-break: break-word;
+
+  @media (min-width: $mobile-width) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  &--active {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: $basic-dark;
+  }
+
+  &:active {
+    color: #034797;
+  }
+}

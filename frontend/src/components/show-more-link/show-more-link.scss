@@ -1,0 +1,29 @@
+@import '../../sass/variables.scss';
+
+.show-more {
+  font-size: 15px;
+  line-height: 19px;
+  display: inline-block;
+  margin-top: 16px;
+  color: $basic-text-color;
+
+  @media (min-width: $mobile-width) {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-top: 32px;
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  &:hover {
+    color: #2f2f2f;
+  }
+
+  &:active {
+    color: #787878;
+  }
+}

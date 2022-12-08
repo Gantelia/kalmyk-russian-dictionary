@@ -1,0 +1,24 @@
+@import '../../sass/variables.scss';
+
+.dictionary {
+  color: #525252;
+  background-color: #e3e3e3;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0 16px;
+
+  @media (min-width: $mobile-width) {
+    border-radius: 12px;
+    padding: 0 24px;
+  }
+
+  @media (min-width: $tablet-width) {
+    border-radius: 16px;
+    padding: 0 32px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 0 64px;
+  }
+}

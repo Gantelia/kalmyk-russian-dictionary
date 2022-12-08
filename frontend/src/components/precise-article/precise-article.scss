@@ -1,0 +1,55 @@
+@import '../../sass/variables.scss';
+
+.result__item {
+  margin-top: 16px;
+}
+
+.result__search-word {
+  margin: 0;
+  font-size: 18px;
+  line-height: 23px;
+  color: $basic-color;
+
+  @media (min-width: $mobile-width) {
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    line-height: 39px;
+  }
+}
+
+.transcription {
+  color: $basic-text-color;
+  margin-bottom: 12px;
+
+  @media (min-width: $mobile-width) {
+    margin-bottom: 16px;
+  }
+}
+
+.translation,
+.result__no-result {
+  white-space: pre-wrap;
+  margin: 0;
+
+  @media (min-width: $mobile-width) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+.first-sentence {
+  color: $basic-color;
+}
+
+.remark {
+  color: #c16800;
+}
