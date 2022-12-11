@@ -23,7 +23,7 @@ function MainPage() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${BACKEND_URL}/?lang=${language}&word_items=${words}`
+          `${BACKEND_URL}/data/?lang=${language}&word_items=${words}`
         );
         const data = await response.json();
         model.rowData = data.response;

@@ -15,4 +15,4 @@ export const SYMBOLS_LIMIT = 220;
 
 export const TAGS_LIMIT = 23;
 
-export const BACKEND_URL = 'http://localhost:8080/data';
+export const BACKEND_URL = 'http://localhost:8080';
