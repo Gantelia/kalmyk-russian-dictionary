@@ -1,18 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cl from 'classnames';
 
 import { DictionaryResult } from '../../types/translations';
 import Dictionary from '../dictionary/dictionary';
-import './all-translations.scss';
+import './dictionaries.scss';
 
 type TranslationsProps = {
   results: DictionaryResult[];
 };
 
-function AllTranslations({ results }: TranslationsProps) {
-  const [activeDictionary, setActiveDictionary] = useState('Словарь Муниева');
+function Dictionaries({ results }: TranslationsProps) {
+  const [activeDictionary, setActiveDictionary] = useState('');
+
+  useEffect(() => {
+    if (results.length) {
+      setActiveDictionary(results[0].title);
+    }
+  }, [results]);
 
   return (
+    // Список всех словарей с тултипами
     <section className="translations">
       <h2 className="visually-hidden">Список словарей и результаты перевода</h2>
       <ul className="dictionaries__list">
@@ -34,7 +41,7 @@ function AllTranslations({ results }: TranslationsProps) {
           </li>
         ))}
       </ul>
-
+      {/* Отображение результатов поиска только для выбранного словаря*/}
       {results.map(
         ({ title, results }) =>
           title === activeDictionary && (
@@ -45,4 +52,4 @@ function AllTranslations({ results }: TranslationsProps) {
   );
 }
 
-export default AllTranslations;
+export default Dictionaries;

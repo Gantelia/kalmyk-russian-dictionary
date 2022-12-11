@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Form from '../../components/form/form';
-import AllTranslations from '../../components/all-translations/all-translations';
+import Dictionaries from '../../components/dictionaries/dictionaries';
 import TranslationsModel from '../../model/translations-model';
 import { BACKEND_URL, Language } from '../../const';
 import { checkStatus } from './utils';
@@ -49,7 +49,7 @@ function MainPage() {
   return (
     <main className="main main--index">
       <Form onSubmit={onSubmit} isLoading={isLoading} />
-      {!error && <AllTranslations results={dictionaries} />}
+      {!error && <Dictionaries results={dictionaries} />}
       {error && (
         <p className="error-message">
           Что-то пошло не так...
