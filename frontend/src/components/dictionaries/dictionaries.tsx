@@ -41,7 +41,7 @@ function Dictionaries({ results }: TranslationsProps) {
           </li>
         ))}
       </ul>
-      {/* Отображение результатов поиска только для выбранного словаря*/}
+      {/* Результаты поиска только для выбранного словаря*/}
       {results.map(
         ({ title, results }) =>
           title === activeDictionary && (

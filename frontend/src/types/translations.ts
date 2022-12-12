@@ -34,10 +34,9 @@ export type DictionaryResult = {
   results: Results;
 };
 
-export type ResponseData = {
+export type ResponseData = Pick<DictionaryResult, 'results'> & {
   dic_full_title: string;
   dic_id: number;
   dic_lang: Language;
   dic_short_title: string;
-  results: Results;
 };

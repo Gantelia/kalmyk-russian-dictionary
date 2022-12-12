@@ -20,11 +20,12 @@ function Layout() {
             alt="Логотип КалмГУ"
           />
         </Link>
-        <h1 className="header__title">
+        {/* Одинаковый <h1> для всех страниц - плохая практика для поисковиков, поэтому <p> или <div>*/}
+        <p className="header__title">
           Электронный сводный
           <br /> калмыцко-русский
           <br /> и русско-калмыцкий словарь
-        </h1>
+        </p>
       </header>
       <Outlet />
       <footer className="footer">

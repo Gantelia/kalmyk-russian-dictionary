@@ -48,6 +48,9 @@ function MainPage() {
 
   return (
     <main className="main main--index">
+      <h1 className="visually-hidden">
+        Электронный сводный калмыцко-русский и русско-калмыцкий словарь
+      </h1>
       <Form onSubmit={onSubmit} isLoading={isLoading} />
       {!error && <Dictionaries results={dictionaries} />}
       {error && (
