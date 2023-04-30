@@ -6,8 +6,10 @@
 
 - Проект создан в образовательных целях по заказу Калмыцкого Государственного Университета им Б.Б.Городовикова
 
-  <img src="./src/images/screenshot.jpg" style="margin-inline: auto; display: block;" width="590" height="952"
+<div align="center"
+  <img src="./src/images/screenshot.jpg" width="590" height="952"
     alt="Калмыцко-русский и русско-калмыцкий словарь">
+</div>
 
 ## Функциональность
 
