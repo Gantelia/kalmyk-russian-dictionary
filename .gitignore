@@ -1,34 +1,24 @@
-/.idea/dics_xal.iml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/vcs.xml
-/.idea/workspace.xml
-/test/
-/backend/app/test.py
-/backend/app/test2.py
-/backend/app/test_etc.py
-
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/frontend/node_modules
-/frontend/pnp
-/frontend/pnp.js
+/node_modules
+/.pnp
+.pnp.js
 
 # testing
-/frontend/coverage
+/coverage
 
 # production
-/frontend/build
+/build
 
 # misc
-/frontend/vscode
-/frontend/DS_Store
-/frontend/env.local
-/frontend/env.development.local
-/frontend/env.test.local
-/frontend/env.production.local
+.vscode
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-/frontend/npm-debug.log*
-/frontend/yarn-debug.log*
-/frontend/yarn-error.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
